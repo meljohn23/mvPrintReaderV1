@@ -1,0 +1,25 @@
+body{
+
+    font-family: Avenir;
+    justify-content: space-around;
+    background-color: dimgray;
+
+}
+
+h1 {
+    font-family: "American Typewriter";
+    color: navy;
+
+}
+
+.entry{
+    justify-content: space-around;
+    display: inline-block;
+    width: 30%;
+    height: 30%;
+    padding: 1% 1% 1% 1%;
+    border: 1px black solid;
+    background: gainsboro;
+    vertical-align:top;
+}
+
