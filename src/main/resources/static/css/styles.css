@@ -1,6 +1,6 @@
 body{
 
-    font-family: Avenir;
+    font-family: "Iowan Old Style";
     justify-content: space-around;
     background-color: dimgray;
 
@@ -8,11 +8,12 @@ body{
 
 h1 {
     font-family: "American Typewriter";
-    color: navy;
+    color: black;
+    background-color: red;
 
 }
 
-.entry{
+.entry {
     justify-content: space-around;
     display: inline-block;
     width: 30%;
