@@ -10,5 +10,6 @@ import java.util.Collection;
 
 public interface RssEntryRepository extends JpaRepository<RssEntry, String> {
     @Autowired
-    Page<RssEntry> findByTypeIn(Collection<String> types, Pageable pageable);
+    Page<RssEntry> findByTypeInAndTitleNotLikeAndDescriptionNotLike(Collection<String> types, String exclude, String exclude2, Pageable pageable);
 }
+

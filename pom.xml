@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.theironyard</groupId>
-	<artifactId>mvprintreaderv1</artifactId>
+	<artifactId>mvprintreaderv1bootstrap</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>mvPrintReaderV1</name>
+	<name>mvPrintReaderV1bootstrap</name>
 	<description>mvp final project 10-12-16</description>
 
 	<parent>

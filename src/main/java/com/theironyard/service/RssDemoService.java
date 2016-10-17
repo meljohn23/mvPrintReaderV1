@@ -34,7 +34,12 @@ public class RssDemoService {
     private List<String> feedUrls = Arrays.asList(
             "http://rss.nytimes.com/services/xml/rss/nyt/World.xml",
             "http://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-            "http://rss.nytimes.com/services/xml/rss/nyt/Business.xml"
+            "http://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+            "http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml",
+            "http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+            "http://www.wsj.com/xml/rss/3_8068.xml",
+            "http://www.wsj.com/xml/rss/3_7085.xml",
+            "http://www.wsj.com/xml/rss/3_7014.xml"
     );
 
     public void loadFeeds(){
@@ -110,8 +115,8 @@ public class RssDemoService {
         }
     }
 
-    public Page<RssEntry> getPageOfEntries(List<String> types, Pageable pageable){
-        Page<RssEntry> temp = rssEntryRepository.findByTypeIn(types, pageable);
+    public Page<RssEntry> getPageOfEntries(List<String> types, Pageable pageable, String keyword){
+        Page<RssEntry> temp = rssEntryRepository.findByTypeInAndTitleNotLikeAndDescriptionNotLike(types, keyword, keyword , pageable);
         return temp;
     }
 //

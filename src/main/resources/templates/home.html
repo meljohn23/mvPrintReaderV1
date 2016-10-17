@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="en">
 <head>
     <meta charset="UTF-8"/>
     <title>mvPrintReader</title>
@@ -9,6 +10,53 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+
+    <style> .entry {
+        background-color: white;
+    }
+
+    a, a:visited {
+        font-family: "American Typewriter";
+        color: black;
+    }
+
+    .jumbotron, .jumbotron:visited {
+        font-family: "American Typewriter";
+        color: black;
+        background-color: red;
+        text-align: center;
+    }
+
+    body{
+
+        font-family: Avenir;
+        color: white;
+        text-align: center;
+        background-color: black;
+
+    }
+
+    h4 {
+        font-family: Avenir;
+        color: white;
+        text-align: center;
+    }
+    .rssKeyWord {
+        color: black;
+        text-align: center;
+        padding: 1% 1% 1% 1%;
+        vertical-align: middle;
+
+    }
+
+
+    .col-lg-4 .well {
+        font-family: Avenir;
+        color: black;
+        background-color: white;
+
+    }
+    </style>
 
     <!--<link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/styles.css}"-->
     <!--href="../static/bootstrap-3.3.7-dist/css/styles.css"/>-->
@@ -20,28 +68,47 @@
 <header>
     <div class="jumbotron">
         <div class="container">
-            <h1>mvPrintReader</h1>
+            <h1><a href="/"><strong>mvPrintReader </strong></a></h1>
         </div>
     </div>
 </header>
 
 <div class="container">
+    <div class="rssKeyWordh4">
+        <h4>Filter IN what you want</h4>
+        <div class="rssKeyWord">
+        <form th:action="@{/}" th:object="${search}"  method="post">
+            <select name="types" th:field="*{types}" title="" multiple="multiple">
+                <option th:each="type : ${types}"
+                        th:value="${type}"
+                        th:text="${type}">Feed Type:</option>
+            </select>
+            <h4> and OUT what you don't:</h4>
+
+            <input type="text" name="keyword" th:value="*{keyword}" placeholder="Keywords to remove"/>
+            <button name="button">GO</button>
+        </form>
+
+</div>
+    </div>
     <div th:each="entry : ${entries}" class="entry">
-
-
         <div class="col-lg-4">
             <div class="well">
-                <div class="detail" th:object="${entry}">
-                    <strong> <a th:href="@{${entry.linkUrl}}" href="http://www.strat-re-source.com"
-                                th:text="${entry.title}"
-                                target="_blank"/> </strong>
-                    <!--<strong th:text="${entry.title}">Title:</strong>-->
-                    <p th:text="*{description}">The Johnson family of Raleigh, NC made time to get together.</p>
-                    <img src="" th:if="${entry.imageUrl != null}" th:src="@{${entry.imageUrl}}"/>
+                    <div class="entry" th:each="entry : ${entries}"/>
+                        <div class="detail" th:object="${entry}">
+                            <strong> <a th:href="@{${entry.linkUrl}}" href="http://www.strat-re-source.com"
+                                        th:text="${entry.title}"
+                                        target="_blank"/> </strong>
+                            <!--<strong th:text="${entry.title}">Title:</strong>-->
+                            <p th:text="*{description}">The Johnson family of Raleigh, NC made time to get together.</p>
+                            <img src="" th:if="${entry.imageUrl != null}" th:src="@{${entry.imageUrl}}"/><br/>
+                            <br/>
+                            <span th:text="*{publishedDate}">DateStamp</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </div>
-    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
