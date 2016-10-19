@@ -10,8 +10,6 @@ public class RssFeed {
 
 
     @Id
-    private int id;
-
     private String url;
 
     private String title;
@@ -88,11 +86,4 @@ public class RssFeed {
         this.type = type;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 }

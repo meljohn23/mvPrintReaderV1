@@ -32,14 +32,14 @@ public class RssDemoService {
     private RssFeedRepository rssFeedRepository;
 
     private List<String> feedUrls = Arrays.asList(
-            "http://rss.nytimes.com/services/xml/rss/nyt/World.xml",
-            "http://rss.nytimes.com/services/xml/rss/nyt/US.xml",
-            "http://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
-            "http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml",
-            "http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
-            "http://www.wsj.com/xml/rss/3_8068.xml",
-            "http://www.wsj.com/xml/rss/3_7085.xml",
-            "http://www.wsj.com/xml/rss/3_7014.xml"
+//            "http://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+//            "http://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+//            "http://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+//            "http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml",
+//            "http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml"
+//            "http://www.wsj.com/xml/rss/3_8068.xml",
+//            "http://www.wsj.com/xml/rss/3_7085.xml",
+//            "http://www.wsj.com/xml/rss/3_7014.xml"
     );
 
     public void loadFeeds(){

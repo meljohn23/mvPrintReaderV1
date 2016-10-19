@@ -50,12 +50,16 @@
     }
 
 
-    .col-lg-4 .well {
+    .col-md-4 .well {
         font-family: Avenir;
         color: black;
         background-color: white;
 
     }
+    img {
+        width: 100%;
+    }
+
     </style>
 
     <!--<link rel="stylesheet" th:href="@{/bootstrap-3.3.7-dist/css/styles.css}"-->
@@ -92,7 +96,7 @@
 </div>
     </div>
     <div th:each="entry : ${entries}" class="entry">
-        <div class="col-lg-4">
+        <div class="col-md-4">
             <div class="well">
                     <div class="entry" th:each="entry : ${entries}"/>
                         <div class="detail" th:object="${entry}">
